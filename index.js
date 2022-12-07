@@ -14,6 +14,9 @@ function promptQuestions(questions) {
 function writeFile(fileName, employeeData) {
 }
 
+function buildRoster() {
+}
+
 function init() {
   // 
 }
