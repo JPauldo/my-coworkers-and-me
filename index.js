@@ -7,36 +7,90 @@ const Intern = require('./lib/Intern');
 
 function getEQs(questionKey) {
   const questions = {
-    dummy: {
-      type: 'confirm',
-      message: 'Annie, are you okay?',
-      name: 'test'
-    }
+    manager: [
+      {
+        type: 'input',
+        message: 'What is the name of the manager?',
+        name: 'name'
+      },
+      {
+        type: 'input',
+        message: 'What is their email?',
+        name: 'email'
+      },
+      {
+        type: 'input',
+        message: 'Please provide their office number.',
+        name: 'officeNumber'
+      }
+    ],
+    engineer: [
+      {
+        type: 'input',
+        message: 'What is the name of the engineer?',
+        name: 'name'
+      },
+      {
+        type: 'input',
+        message: 'What is their email?',
+        name: 'email'
+      },
+      {
+        type: 'input',
+        message: 'Please provide their GitHub username.',
+        name: 'github'
+      }
+    ]
   }
 
   return questions[questionKey];
 }
 
-function promptQuestions(questionType) {
+async function promptQuestions(questionType) {
   const questions = getEQs(questionType);
+  // console.log(questions.length);
+  let selection;
   
-  inquirer
-    .prompt(questions)
-    .then((answers) => {
-      return answers;
-    });
+  const contPrompt = {
+    type: 'list',
+    message: 'Which type of employee would you like to add?',
+    name: 'next',
+    choices: ['Engineer', 'Intern', 'I think I\'m done']
+  }
+  questions.push(contPrompt);
+  
+  const answers = await inquirer.prompt(questions);
+  
+  if(answers.next === 'Engineer') {
+    // console.log(answers);
+    selection = answers.next.toLowerCase();
+    delete answers.next;
+    
+    return [answers, selection];
+  }
+  else {
+    delete answers.next;
+    // console.log(answers);
+    selection = 'None';
+    
+    return [answers, selection];
+  }
 }
 
 function createEmployee(data) {
 }
 
-function buildRoster() {
+async function buildRoster() {
   const roster = [];
-  let questionType = 'dummy';
-  
-  const employee = promptQuestions(questionType);
+  let questionType = 'manager';
 
-  roster.push(employee)
+  while(questionType !== 'None') {
+    const [ employee, qType ] = await promptQuestions(questionType);
+    roster.push(employee);
+    // console.log(roster);
+    questionType = qType;
+    // console.log(questionType);
+  }
 
   return roster;
 }
@@ -44,8 +98,9 @@ function buildRoster() {
 function writeFile(fileName, employeeData) {
 }
 
-function init() {
-  const roster = buildRoster();
+async function init() {
+  const roster = await buildRoster();
+  console.log(roster);
   // 
 }
 
