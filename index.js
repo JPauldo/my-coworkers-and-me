@@ -40,6 +40,23 @@ function getEQs(questionKey) {
         message: 'Please provide their GitHub username.',
         name: 'github'
       }
+    ],
+    intern: [
+      {
+        type: 'input',
+        message: 'What is the name of the intern?',
+        name: 'name'
+      },
+      {
+        type: 'input',
+        message: 'What is their email?',
+        name: 'email'
+      },
+      {
+        type: 'input',
+        message: 'Please provide their university\'s name.',
+        name: 'school'
+      }
     ]
   }
 
@@ -68,6 +85,13 @@ async function promptQuestions(questionType) {
     
     return [answers, selection];
   }
+  else if(answers.next === 'Intern') {
+    // console.log(answers);
+    selection = answers.next.toLowerCase();
+    delete answers.next;
+    
+    return [answers, selection];
+  }
   else {
     delete answers.next;
     // console.log(answers);
@@ -78,6 +102,26 @@ async function promptQuestions(questionType) {
 }
 
 function createEmployee(data) {
+  if(data.github) {
+    // 
+    const { name, email, github } = data;
+    const id = Math.floor((Math.random() * 899999)) + 100000;
+
+    return new Engineer(name, id, email, github);
+  }
+  else if(data.school) {
+    // 
+    const { name, email, school } = data;
+    const id = Math.floor((Math.random() * 899999)) + 100000;
+
+    return new Intern(name, id, email, school);
+  }
+  else {
+    const { name, email, officeNumber } = data;
+    const id = Math.floor((Math.random() * 899999)) + 100000;
+
+    return new Manager(name, id, email, officeNumber);
+  }
 }
 
 async function buildRoster() {
@@ -86,7 +130,7 @@ async function buildRoster() {
 
   while(questionType !== 'None') {
     const [ employee, qType ] = await promptQuestions(questionType);
-    roster.push(employee);
+    roster.push(createEmployee(employee));
     // console.log(roster);
     questionType = qType;
     // console.log(questionType);
