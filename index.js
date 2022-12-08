@@ -139,12 +139,25 @@ async function buildRoster() {
   return roster;
 }
 
-function writeFile(fileName, employeeData) {
+function writeToFile(fileName, employeeData) {
+  let path = './employee_pages';
+  
+  if(!fs.existsSync(path)) {
+    fs.mkdirSync(path);
+  }
+  path += `/${ fileName }`;
+  fs.writeFile(path, employeePage(employeeData), (err) =>
+    err ? console.error(err) : console.log('Generated Employee Page.')
+  )
 }
 
 async function init() {
   const roster = await buildRoster();
   console.log(roster);
+  const managerName = roster[0].getName().toLowerCase();
+  const fileName = `${ managerName }s-roster.html`
+  
+  writeToFile(fileName, roster);
   // 
 }
 
