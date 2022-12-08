@@ -5,22 +5,47 @@ const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
 
+function getEQs(questionKey) {
+  const questions = {
+    dummy: {
+      type: 'confirm',
+      message: 'Annie, are you okay?',
+      name: 'test'
+    }
+  }
+
+  return questions[questionKey];
+}
+
+function promptQuestions(questionType) {
+  const questions = getEQs(questionType);
+  
+  inquirer
+    .prompt(questions)
+    .then((answers) => {
+      return answers;
+    });
+}
+
 function createEmployee(data) {
 }
 
-function getEQs(questionKey) {
-}
+function buildRoster() {
+  const roster = [];
+  let questionType = 'dummy';
+  
+  const employee = promptQuestions(questionType);
 
-function promptQuestions(questions) {
+  roster.push(employee)
+
+  return roster;
 }
 
 function writeFile(fileName, employeeData) {
 }
 
-function buildRoster() {
-}
-
 function init() {
+  const roster = buildRoster();
   // 
 }
 
