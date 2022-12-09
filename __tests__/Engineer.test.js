@@ -1,6 +1,6 @@
 const Engineer = require("../lib/Engineer");
 
-describe("", () => {
+describe("Engineer", () => {
   describe("Initialization", () => {
     it("should return an object with a property of github", () => {
       const engineer = new Engineer();
@@ -30,14 +30,14 @@ describe("", () => {
       expect(engineer.getEmail()).toEqual(email);
     });
   });
-  describe("github", () => {
+  describe("Github", () => {
     it("should return a github username when calling the getGitHub method", () => {
       const engineer = new Engineer("", 0, "", "NNSinclair");
 
       expect(engineer.getGitHub()).toEqual("NNSinclair");
     });
   });
-  describe("role", () => {
+  describe("Role", () => {
     it("should return the role \"Engineer\" when calling the getRole method", () => {
       const role = "Engineer";
       const engineer = new Engineer();

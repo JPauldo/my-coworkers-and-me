@@ -19,15 +19,15 @@ describe("Employee", () => {
     });
   });
 
-  describe("name", () => {
+  describe("Name", () => {
     it("should return a name when calling the getName method", () => {
       const employee = new Employee("Myra", 0, "")
 
-      expect(employee.getName()).toEqual("Myra);
+      expect(employee.getName()).toEqual("Myra");
     });
   });
 
-  describe("id", () => {
+  describe("ID", () => {
     it("should return an ID when calling the getId method", () => {
       const employee = new Employee("", 234272, "")
 
@@ -35,7 +35,7 @@ describe("Employee", () => {
     });
   });
 
-  describe("email", () => {
+  describe("Email", () => {
     it("should return an email when calling the getEmail method", () => {
       const employee = new Employee("", 0, "tilina4883@cosaxu.com");
       
@@ -43,7 +43,7 @@ describe("Employee", () => {
     });
   });
 
-  describe("role", () => {
+  describe("Role", () => {
     it("should return the role \"Employee\" when calling the getRole method", () => {
       const role = "Employee";
       const employee = new Employee();
