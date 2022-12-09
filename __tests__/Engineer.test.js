@@ -25,11 +25,12 @@ describe("Engineer", () => {
 
       const engineer = new Engineer(name, id, email);
 
-      expect(engineer.getName()).toEqual(name);
-      expect(engineer.getId()).toEqual(id);
-      expect(engineer.getEmail()).toEqual(email);
+      expect(engineer.getName()).toEqual("Craig");
+      expect(engineer.getId()).toEqual(701304);
+      expect(engineer.getEmail()).toEqual("crodgers82@hotmail.com");
     });
   });
+  
   describe("Github", () => {
     it("should return a github username when calling the getGitHub method", () => {
       const engineer = new Engineer("", 0, "", "NNSinclair");
@@ -37,6 +38,7 @@ describe("Engineer", () => {
       expect(engineer.getGitHub()).toEqual("NNSinclair");
     });
   });
+  
   describe("Role", () => {
     it("should return the role \"Engineer\" when calling the getRole method", () => {
       const role = "Engineer";
