@@ -30,8 +30,8 @@ function createEngineerCard(engineerInfo) {
             <h5><em>Engineer</em></h5>
           </header>
           <article class="card-body text-black">
-          <p class="card-text"><b>ID:</b> ${ engineerInfo.getId() }</p>
-          <p class="card-text"><b>Email:</b> <a href="mailto:${ engineerInfo.getEmail() }" target="_blank">Send Email</a></p>
+            <p class="card-text"><b>ID:</b> ${ engineerInfo.getId() }</p>
+            <p class="card-text"><b>Email:</b> <a href="mailto:${ engineerInfo.getEmail() }" target="_blank">Send Email</a></p>
             <p class="card-text"><b>Github:</b> <a href="https://github.com/${ engineerInfo.getGitHub() }" target="_blank">${ engineerInfo.getGitHub() }</a></p>
           </article>
         </section>`;
@@ -119,8 +119,9 @@ function generateHTML(employeeData) {
     </style>
   </head>
   <body>
+    <!-- Header Section -->
     <nav class="navbar navbar-light bg-dark justify-content-center text-white">
-      <h1>Bootstrap</h1>
+      <h1>${ employeeData[0].getName() }'s Team</h1>
     </nav>
 
     <!-- Main Content Section -->
@@ -131,7 +132,7 @@ ${ renderCards(employeeData) }
     </main>
 
     <footer class="container-fluid text-center">
-      <p>Footer Text</p>
+      <p>Created with My Coworkers & Me</p>
     </footer>
 
     <!-- JavaScript Section -->
