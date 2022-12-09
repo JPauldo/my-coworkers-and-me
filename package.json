@@ -1,0 +1,29 @@
+{
+  "name": "my-coworkers-and-me",
+  "version": "1.0.0",
+  "description": "My Coworkers &amp; Me is an application that takes in information about employees on a software engineering team and generates an HTML webpage that displays summaries for each person.",
+  "main": "index.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "test": "jest --verbose"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JPauldo/my-coworkers-and-me.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JPauldo/my-coworkers-and-me/issues"
+  },
+  "homepage": "https://github.com/JPauldo/my-coworkers-and-me#readme",
+  "dependencies": {
+    "inquirer": "^8.2.5"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1"
+  }
+}
