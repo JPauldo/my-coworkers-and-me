@@ -65,7 +65,6 @@ function getEQs(questionKey) {
 
 async function promptQuestions(questionType) {
   const questions = getEQs(questionType);
-  // console.log(questions.length);
   let selection;
   
   const contPrompt = {
@@ -86,7 +85,6 @@ async function promptQuestions(questionType) {
     return [answers, selection];
   }
   else if(answers.next === 'Intern') {
-    // console.log(answers);
     selection = answers.next.toLowerCase();
     delete answers.next;
     
@@ -94,7 +92,6 @@ async function promptQuestions(questionType) {
   }
   else {
     delete answers.next;
-    // console.log(answers);
     selection = 'None';
     
     return [answers, selection];
@@ -103,7 +100,6 @@ async function promptQuestions(questionType) {
 
 function createEmployee(data) {
   if(data.github) {
-    // 
     const { name, email, github } = data;
     const id = Math.floor((Math.random() * 899999)) + 100000;
 
@@ -131,9 +127,7 @@ async function buildRoster() {
   while(questionType !== 'None') {
     const [ employee, qType ] = await promptQuestions(questionType);
     roster.push(createEmployee(employee));
-    // console.log(roster);
     questionType = qType;
-    // console.log(questionType);
   }
 
   return roster;
@@ -153,7 +147,6 @@ function writeToFile(fileName, employeeData) {
 
 async function init() {
   const roster = await buildRoster();
-  console.log(roster);
   const managerName = roster[0].getName().toLowerCase();
   const fileName = `${ managerName }s-roster.html`
   

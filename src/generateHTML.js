@@ -1,8 +1,4 @@
 function createManagerCard(managerInfo) {
-  // 
-  console.log(managerInfo);
-  console.log(managerInfo.getName());
-
   const htmlCard = `        <section class="card mb-3 shadow" style="max-width: 18rem;">
           <header class="card-header text-white bg-primary">
             <h2>${ managerInfo.getName() }</h2> 
@@ -19,10 +15,6 @@ function createManagerCard(managerInfo) {
 }
 
 function createEngineerCard(engineerInfo) {
-  // 
-  console.log(engineerInfo);
-  console.log(engineerInfo.getGitHub());
-  
   const htmlCard = `
         <section class="card mb-3 shadow" style="max-width: 18rem;">
           <header class="card-header text-white bg-secondary">
@@ -40,9 +32,6 @@ function createEngineerCard(engineerInfo) {
 }
 
 function createInternCard(internInfo) {
-  // 
-  console.log(internInfo);
-
   const htmlCard = `
         <section class="card mb-3 shadow" style="max-width: 18rem;">
           <header class="card-header text-white bg-info">
@@ -60,21 +49,16 @@ function createInternCard(internInfo) {
 }
 
 function renderCards(employeeInfo) {
-  // 
   let employeeSection = ``;
-  console.log(employeeInfo);
 
   employeeInfo.forEach(employee => {
     if (employee.getRole() === 'Engineer') {
-      // 
       employeeSection += createEngineerCard(employee);
     }
     else if (employee.getRole() === 'Intern') {
-      // 
       employeeSection += createInternCard(employee);
     }
     else {
-      // 
       employeeSection += createManagerCard(employee);
     }
   });
