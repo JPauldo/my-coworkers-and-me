@@ -21,33 +21,30 @@ describe("Employee", () => {
 
   describe("name", () => {
     it("should return a name when calling the getName method", () => {
-      const name = "Myra";
       const employee = new Employee("Myra", 0, "")
 
-      expect(employee.getName()).toEqual(name);
+      expect(employee.getName()).toEqual("Myra);
     });
   });
 
   describe("id", () => {
     it("should return an ID when calling the getId method", () => {
-      const id = 234272;
       const employee = new Employee("", 234272, "")
 
-      expect(employee.getId()).toEqual(id);
+      expect(employee.getId()).toEqual(234272);
     });
   });
 
   describe("email", () => {
     it("should return an email when calling the getEmail method", () => {
-      const email = "tilina4883@cosaxu.com";
       const employee = new Employee("", 0, "tilina4883@cosaxu.com");
       
-      expect(employee.getEmail()).toEqual(email);
+      expect(employee.getEmail()).toEqual("tilina4883@cosaxu.com");
     });
   });
 
   describe("role", () => {
-    it("should return a role of \"Employee\" when calling the getRole method", () => {
+    it("should return the role \"Employee\" when calling the getRole method", () => {
       const role = "Employee";
       const employee = new Employee();
       

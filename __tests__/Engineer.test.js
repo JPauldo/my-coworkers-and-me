@@ -38,7 +38,7 @@ describe("", () => {
     });
   });
   describe("role", () => {
-    it("should return the role of \"Engineer\" when calling the getRole method", () => {
+    it("should return the role \"Engineer\" when calling the getRole method", () => {
       const role = "Engineer";
       const engineer = new Engineer();
       
