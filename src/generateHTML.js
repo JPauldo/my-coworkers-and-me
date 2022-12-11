@@ -1,3 +1,8 @@
+/**
+ * Creates a manager card.
+ * @param {Manager} managerInfo An object with manager data
+ * @returns {string} An HTML snippet of the Manager card
+ */
 function createManagerCard(managerInfo) {
   const htmlCard = `        <section class="card mb-3 shadow" style="max-width: 18rem;">
           <header class="card-header text-white bg-primary">
@@ -14,6 +19,11 @@ function createManagerCard(managerInfo) {
   return htmlCard;
 }
 
+/**
+ * Creates a engineer card.
+ * @param {Engineer} engineerInfo An object with engineer data
+ * @returns {string} An HTML snippet of the Engineer card
+ */
 function createEngineerCard(engineerInfo) {
   const htmlCard = `
         <section class="card mb-3 shadow" style="max-width: 18rem;">
@@ -31,6 +41,11 @@ function createEngineerCard(engineerInfo) {
   return htmlCard;
 }
 
+/**
+ * Creates a intern card.
+ * @param {Intern} internInfo An object with intern data
+ * @returns {string} An HTML snippet of the Intern card
+ */
 function createInternCard(internInfo) {
   const htmlCard = `
         <section class="card mb-3 shadow" style="max-width: 18rem;">
@@ -48,6 +63,11 @@ function createInternCard(internInfo) {
   return htmlCard;
 }
 
+/**
+ * Renders the cards based on the employee information provided.
+ * @param {array} employeeInfo An array of Employee objects
+ * @returns {string} An HTML snippet of the Employee cards
+ */
 function renderCards(employeeInfo) {
   let employeeSection = ``;
 
@@ -66,6 +86,11 @@ function renderCards(employeeInfo) {
   return employeeSection
 }
 
+/**
+ * Generates the formatting for the HTML.
+ * @param {array} employeeData An array of Employee objects
+ * @returns {string} The string of the HTML
+ */
 function generateHTML(employeeData) {
   // 
   const htmlPage = `<!DOCTYPE html>
