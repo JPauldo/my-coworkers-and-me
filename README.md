@@ -27,7 +27,16 @@ It is quite intuitive. Why not just give it a try?
 
 Below is a demonstration of the application: 
 
-![Alt Text for Placeholder](https://via.placeholder.com/150)
+![A Preview of My Coworkers & Me](./src/assets/images/my-coworkers-and-me-preview.gif)
+
+## Credit
+
+Shout out to the people who helped me to brainstorm the structure:
+- [Anthony Cedrone](https://github.com/antced)
+- [Leon Forsythe](https://github.com/hope428)
+- [Avani Muchhala](https://github.com/AvaniMuchhala)
+- [Eric Kim](https://github.com/EricKim86)
+- [Layne Nigro](https://github.com/LayneNi)
 
 ## License
 
